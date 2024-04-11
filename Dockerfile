@@ -34,6 +34,7 @@ RUN set -x && \
     # install SoapySDRPlay
     git clone https://github.com/pothosware/SoapySDRPlay3.git /src/sdrplay/SoapySDRPlay3 && \
     pushd /src/sdrplay/SoapySDRPlay3 && \
+    git checkout api-3.07 && \
     sed -i 's#// OVERLOAD DETECTED#SoapySDR_log(SOAPY_SDR_WARNING, "ADC OVERLOAD DETECTED");#' Streaming.cpp && \
 #    sed -i 's#// OVERLOAD CORRECTED#SoapySDR_log(SOAPY_SDR_WARNING, "ADC OVERLOAD CORRECTED");#' Streaming.cpp && \
     mkdir build && \

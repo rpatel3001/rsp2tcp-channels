@@ -1,4 +1,9 @@
 #!/usr/bin/with-contenv bash
 #shellcheck shell=bash
 
-/usr/local/bin/sdrplay_apiService
+if [[ -z "${NO_API}" ]]; then
+  /usr/local/bin/sdrplay_apiService
+else
+  echo "NO_API is set, not starting sdrplay api"
+  while true; do sleep 10000; done
+fi
